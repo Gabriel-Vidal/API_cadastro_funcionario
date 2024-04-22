@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Funcionário</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='edit.css')}}">
+    <link rel="stylesheet" href="../static/edit.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Funcionário</h1>
+    </header>
+    <div class="form-edit">
+        <form id="edit-form" action="{{ url_for('funcionarios.edit_func', id=func.id)}}" method="POST">
+            <label for="nome">Novo Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ func.nome }}" required><br>
+
+            <label for="sobrenome">Novo Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" value="{{ func.sobrenome }}" required><br>
+
+            <label for="funcao">Nova Função:</label>
+            <input type="text" id="funcao" name="funcao" value="{{ func.funcao }}" required><br>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Funcionários</h1>
+    </header>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Função</th>
+        </tr>
+        {% for func in funcs %}
+        <tr>
+            <td>{{ func.nome }}</td>
+            <td>{{ func.sobrenome }}</td>
+            <td>{{ func.funcao }}</td>
+            <td class="btns">
+                <a href="{{url_for('funcionarios.delete_func', id=func.id)}}"><button class="delete">Deletar</button></a>
+                <a href="{{url_for('funcionarios.edit_func', id=func.id)}}"><button class="edit">Editar</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="btn-cadastrar">
+        <a href="{{url_for('funcionarios.criar_func')}}"><button>Cadastrar Funcionario</button></a>
+    </div>
+
+</body>
+</html>

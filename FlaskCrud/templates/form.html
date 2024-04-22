@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Funcionários</h1>
+    </header>
+    <form id="cadastro-form" action="{{ url_for('funcionarios.criar_func')}}" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required><br>
+
+        <label for="funcao">Função:</label>
+        <input type="text" id="funcao" name="funcao" required><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
